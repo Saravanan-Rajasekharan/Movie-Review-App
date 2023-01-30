@@ -16,11 +16,8 @@ public class ReviewController {
 
     @Autowired
     private ReviewService reviewService;
-
     @PostMapping
     public ResponseEntity<Review> createReview(@RequestBody Map<String,String> payload){
-
         return new ResponseEntity<>(reviewService.createReview(payload.get("reviewBody"),payload.get("imdbId")), HttpStatus.CREATED);
-
     }
 }
